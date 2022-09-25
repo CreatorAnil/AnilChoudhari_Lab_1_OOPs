@@ -54,11 +54,13 @@ public class HotelManagement {
 					Booking book = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy());
 					//add the AC price in book class's method
 					System.out.print(" , "+ room.getOccupancy()+" Occupancy "+ book.estimatedprice(room.getOccupancy()));
-					//make this status in book class
+					//set this status in book class
 					room.setRoomStatus(true);
 					break;
 				}
 				}
+			//add if user don't give floor number
+			
 			}
 		
 	}
