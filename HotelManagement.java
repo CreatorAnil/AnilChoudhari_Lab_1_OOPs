@@ -47,22 +47,41 @@ public class HotelManagement {
 		
 		List<Room> rooms=hotel.getRooms();
 		
-		for(Room room:rooms) {
-			if(input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy())){	
+		switch(input3) {
+			case "1": 
+				for(Room room:rooms) {
+					if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
+						if(room.isRoomStatus()==false) {
+							System.out.println(room.getRoomId());
+							room.setRoomStatus(true);
+							break;
+							}
+						}
+					}
+			break;
+			case "2": 
+				for(Room room:rooms) {
+					if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
+						if(room.isRoomStatus()==false) {
+							System.out.println(room.getRoomId());
+							room.setRoomStatus(true);
+							break;
+				}
+			}
+			}
+			break;
+			
+			default :
+				for(Room room:rooms) {if (req.getOccupancy().equals(room.getOccupancy())) {
 					if(room.isRoomStatus()==false) {
 						System.out.println(room.getRoomId());
 						room.setRoomStatus(true);
 						break;
+						}
 					}
-					
 				}
-			else if(req.getOccupancy().equals(room.getOccupancy())){
-				if(room.isRoomStatus()==false) {
-					System.out.println(room.getRoomId());
-					room.setRoomStatus(true);
-					break;
+				break;
 				}
-			}
 			}
 		}
-	}
+	
