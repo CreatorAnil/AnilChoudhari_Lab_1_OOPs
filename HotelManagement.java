@@ -50,19 +50,19 @@ public class HotelManagement {
 			List<Room> rooms=hotel.getRooms();
 			
 			for(Room room:rooms) {
-				//add one more validation for AC
+				//remaining :-need to add one more validation for AC
 				if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
 					if(room.isRoomStatus()==false) {
 						Booking book = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy());
-						//add the AC price in book class's method
+						//remaining :-need add the AC price in book class's method
 						System.out.println(room.getRoomId()+" , "+ room.getOccupancy()+" Occupancy "+ book.estimatedprice(room.getOccupancy()));
-						//set this status in book class
+						//remaining :-need set this status in book class
 						room.setRoomStatus(true);
 						break;
 					}
 					}
 
-				//add if user don't give floor number
+				//remaining :-need add if user don't give floor number
 				
 				}
 			}
