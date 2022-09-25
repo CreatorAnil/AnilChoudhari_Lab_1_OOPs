@@ -33,15 +33,14 @@ public class HotelManagement {
 		
 		Scanner in = new Scanner(System.in);
 		
-		System.out.println("type of room");
+		System.out.println("type of room : Single or Double or Triple");
 		String input1 = in.next();
 		
 		System.out.println("AC or non-AC");
 		String input2 = in.next();
 		
-		System.out.println("which floor");
+		System.out.println("which floor: 1 or 2");
 		String input3 = in.next();
-		
 		
 		BookingReq req = new BookingReq(input1,input2,input3);
 		
@@ -50,14 +49,14 @@ public class HotelManagement {
 		for(Room room:rooms) {
 			if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
 				if(room.isRoomStatus()==false) {
-					System.out.println(room.getRoomId());
+					System.out.print(room.getRoomId());
+					System.out.print(" , "+ room.getOccupancy()+" Occupancy");
 					room.setRoomStatus(true);
 					break;
 				}
-				
-		
 				}
 			}
+		
 	}
 }
 	
