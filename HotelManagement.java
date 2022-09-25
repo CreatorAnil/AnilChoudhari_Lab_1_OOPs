@@ -50,7 +50,8 @@ public class HotelManagement {
 			if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
 				if(room.isRoomStatus()==false) {
 					System.out.print(room.getRoomId());
-					System.out.print(" , "+ room.getOccupancy()+" Occupancy");
+					Booking book = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy());
+					System.out.print(" , "+ room.getOccupancy()+" Occupancy "+ book.estimatedprice(room.getOccupancy()));
 					room.setRoomStatus(true);
 					break;
 				}

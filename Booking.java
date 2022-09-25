@@ -19,20 +19,13 @@ class Booking{
 		return occupancy;
 	}
 	
-	//private Customer customer;
-
-	
-
-/*
-	public Customer getCustomer() {
-		return customer;
+	public int estimatedprice(String occupancy) {
+		switch(occupancy) {
+		case "Single": return 2000;
+		case "Double": return 3000;
+		case "Triple": return 4000;
+		}
+		return 0;
 	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-*/	
-	
-	
 
 }
