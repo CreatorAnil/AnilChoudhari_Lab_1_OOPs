@@ -32,37 +32,40 @@ public class HotelManagement {
 		hotel.setRooms(Arrays.asList(room1,room2,room3,room4,room5,room6,room7));
 		
 		Scanner in = new Scanner(System.in);
+		while(true) {
+			System.out.println("");
+			System.out.println("Welcome in Taj hotel");
 		
-		System.out.println("type of room : Single or Double or Triple");
-		String input1 = in.next();
-		
-		System.out.println("AC or non-AC");
-		String input2 = in.next();
-		
-		System.out.println("which floor: 1 or 2");
-		String input3 = in.next();
-		
-		BookingReq req = new BookingReq(input1,input2,input3);
-		
-		List<Room> rooms=hotel.getRooms();
-		
-		for(Room room:rooms) {
-			//add one more validation for AC
-			if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
-				if(room.isRoomStatus()==false) {
-					System.out.print(room.getRoomId());
-					Booking book = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy());
-					//add the AC price in book class's method
-					System.out.print(" , "+ room.getOccupancy()+" Occupancy "+ book.estimatedprice(room.getOccupancy()));
-					//set this status in book class
-					room.setRoomStatus(true);
-					break;
-				}
-				}
-			//add if user don't give floor number
+			System.out.println("type of room : Single or Double or Triple");
+			String input1 = in.next();
 			
+			System.out.println("AC or non-AC");
+			String input2 = in.next();
+			
+			System.out.println("which floor: 1 or 2");
+			String input3 = in.next();
+			
+			BookingReq req = new BookingReq(input1,input2,input3);
+			
+			List<Room> rooms=hotel.getRooms();
+			
+			for(Room room:rooms) {
+				//add one more validation for AC
+				if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
+					if(room.isRoomStatus()==false) {
+						Booking book = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy());
+						//add the AC price in book class's method
+						System.out.println(room.getRoomId()+" , "+ room.getOccupancy()+" Occupancy "+ book.estimatedprice(room.getOccupancy()));
+						//set this status in book class
+						room.setRoomStatus(true);
+						break;
+					}
+					}
+
+				//add if user don't give floor number
+				
+				}
 			}
-		
-	}
+		}
 }
 	
