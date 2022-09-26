@@ -37,9 +37,8 @@ public class HotelManagement {
 			List<Room> rooms=hotel.getRooms();
 			boolean isAvailable =true;
 			for(Room room:rooms) {
-				
-				if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
-					if(room.isRoomStatus()==false && input2.equals(room.getAC())) {
+				if ((req.getFloor().equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
+					if(room.isRoomStatus()==false && req.getAmenityName().equals(room.getAC())) {
 						Booking booking = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy(),room.getAC());
 						hotel.setBooking(booking);;
 						Booking book = hotel.getBooking();
@@ -53,9 +52,9 @@ public class HotelManagement {
 					}
 					
 					}
-				else if(input3.equals("any")) {
+				else if(req.getFloor().equals("any")) {
 					if ((req.getOccupancy().equals(room.getOccupancy()))) {
-						if(room.isRoomStatus()==false && input2.equals(room.getAC())) {
+						if(room.isRoomStatus()==false && req.getAmenityName().equals(room.getAC())) {
 							Booking booking = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy(),room.getAC());
 							hotel.setBooking(booking);;
 							Booking book = hotel.getBooking();
@@ -73,7 +72,7 @@ public class HotelManagement {
 				
 				}
 			if(isAvailable==false) {
-				System.out.println("Sorry, Currently " +input1 + " occupany room is not avaliable in "+ hotel.getHotelName()+" Hotel");
+				System.out.println("Sorry, Currently " +req.getOccupancy() + " occupany room is not avaliable in "+ hotel.getHotelName()+" Hotel");
 			}
 			}
 		}
