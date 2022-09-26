@@ -69,6 +69,9 @@ public class HotelManagement {
 						}
 					
 					}
+				else {
+					isAvailable =false;
+				}
 				
 				}
 			if(isAvailable==false) {
