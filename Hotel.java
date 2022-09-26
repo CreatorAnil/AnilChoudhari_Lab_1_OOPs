@@ -10,7 +10,7 @@ public class Hotel {
 	
 	private List<Room> rooms;
 
-	
+	private Booking booking;
 	
 	public Hotel(String hotelName,String address,int totalfloor,int totalroom,  float rating, String catgoryOfHotel ) {
 		this.totalroom = totalroom;
@@ -54,6 +54,15 @@ public class Hotel {
 	public List<Room> getRooms() {
 		return rooms;
 	}
+
+	public Booking getBooking() {
+		return booking;
+	}
+
+	public void setBooking(Booking booking) {
+		this.booking = booking;
+	}
+	
 	
 	
 

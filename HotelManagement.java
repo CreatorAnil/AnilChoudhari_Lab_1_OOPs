@@ -39,8 +39,10 @@ public class HotelManagement {
 			for(Room room:rooms) {
 				if ((input3.equals(room.getFloor()) && req.getOccupancy().equals(room.getOccupancy()))) {
 					if(room.isRoomStatus()==false && input2.equals(room.getAC())) {
-						Booking book = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy(),room.getAC());
-						System.out.println(room.getRoomId()+" , "+ room.getOccupancy()+" Occupancy, estimated cost:- "+ book.estimatedprice(room.getOccupancy(),room.getAC()));
+						Booking booking = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy(),room.getAC());
+						hotel.setBooking(booking);;
+						Booking book = hotel.getBooking();
+						System.out.println(book.getRoomId()+" , "+ book.getOccupancy()+" Occupancy, estimated cost:- "+ book.estimatedprice(room.getOccupancy(),room.getAC()));
 						room.setRoomStatus(true);
 						break;
 						}
@@ -48,15 +50,15 @@ public class HotelManagement {
 				else if(input3.equals("any")) {
 					if ((req.getOccupancy().equals(room.getOccupancy()))) {
 						if(room.isRoomStatus()==false && input2.equals(room.getAC())) {
-							Booking book = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy(),room.getAC());
-							System.out.println(room.getRoomId()+" , "+ room.getOccupancy()+" Occupancy "+ book.estimatedprice(room.getOccupancy(),room.getAC()));
+							Booking booking = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy(),room.getAC());
+							hotel.setBooking(booking);;
+							Booking book = hotel.getBooking();
+							System.out.println(book.getRoomId()+" , "+ book.getOccupancy()+" Occupancy, estimated cost:- "+ book.estimatedprice(room.getOccupancy(),room.getAC()));
 							room.setRoomStatus(true);
 							break;
 							}
-						}
-					
-					
-				}
+						}	
+					}
 				
 				}
 			}
