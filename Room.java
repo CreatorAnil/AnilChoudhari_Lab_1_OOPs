@@ -5,14 +5,14 @@ class Room {
 	private String occupancy;
 	private boolean roomStatus;
 	private String floor;
+	private String AC;
 	
-	private List<Amenity> amenities;
-	
-	public Room(int RoomId,String occupancy,boolean roomStatus, String floor){
+	public Room(int RoomId,String occupancy,boolean roomStatus, String floor,String AC){
 		this.roomId= RoomId;
 		this.occupancy= occupancy;
 		this.roomStatus = roomStatus;
 		this.floor = floor;
+		this.AC = AC;
 	}
 
 	public int getRoomId() {
@@ -34,12 +34,9 @@ class Room {
 	public String getFloor() {
 		return floor;
 	}
-	
-	public void setAmenities(List<Amenity> amenities) {
-		this.amenities = amenities;
+
+	public String getAC() {
+		return AC;
 	}
 	
-	public List<Amenity> getAmenities() {
-		return amenities;
-	}
 }

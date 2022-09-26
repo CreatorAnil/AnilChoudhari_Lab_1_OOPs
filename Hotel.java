@@ -10,6 +10,8 @@ public class Hotel {
 	
 	private List<Room> rooms;
 
+	
+	
 	public Hotel(String hotelName,String address,int totalfloor,int totalroom,  float rating, String catgoryOfHotel ) {
 		this.totalroom = totalroom;
 		this.totalfloor = totalfloor;
