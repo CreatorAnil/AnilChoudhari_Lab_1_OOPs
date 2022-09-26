@@ -43,7 +43,7 @@ public class HotelManagement {
 						Booking booking = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy(),room.getAC());
 						hotel.setBooking(booking);;
 						Booking book = hotel.getBooking();
-						System.out.println(book.getRoomId()+" , "+ book.getOccupancy()+" Occupancy, estimated cost:- "+ book.estimatedprice(room.getOccupancy(),room.getAC()));
+						System.out.println("Room number: "+book.getRoomId()+", floor no: " +book.getFloor()+", "+book.getAC()+", "+ book.getOccupancy()+" Occupancy, estimated cost:- "+ book.estimatedprice(room.getOccupancy(),room.getAC()));
 						room.setRoomStatus(true);
 						isAvailable =true;
 						break;
@@ -59,7 +59,7 @@ public class HotelManagement {
 							Booking booking = new Booking(room.getRoomId(),room.getFloor(),room.getOccupancy(),room.getAC());
 							hotel.setBooking(booking);;
 							Booking book = hotel.getBooking();
-							System.out.println(book.getRoomId()+" , "+ book.getOccupancy()+" Occupancy, estimated cost:- "+ book.estimatedprice(room.getOccupancy(),room.getAC()));
+							System.out.println("Room number: "+ book.getRoomId()+", floor no:"+book.getFloor()+", "+book.getAC()+", "+ book.getOccupancy()+" Occupancy, estimated cost:- "+ book.estimatedprice(room.getOccupancy(),room.getAC()));
 							room.setRoomStatus(true);
 							isAvailable =true;
 							break;
